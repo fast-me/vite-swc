@@ -1,0 +1,30 @@
+{
+  "name": "@fast.me/vite-swc",
+  "version": "0.0.3",
+  "repository": {
+    "url": "https://github.com/fast-me/vite-swc"
+  },
+  "author": {
+    "name": "Zaid Daghestani",
+    "email": "zaid@fastapps.one"
+  },
+  "main": "./dist/lib/index.js",
+  "module": "./dist/index.mjs",
+  "type": "commonjs",
+  "scripts": {
+    "build": "yarn vite build",
+    "test": "yarn vitest",
+    "publish": "yarn build && yarn npm publish --access public"
+  },
+  "dependencies": {
+    "@swc/core": "^1.3.60",
+    "vite": "^4.3.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-static-copy": "^0.15.0",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.31.1"
+  }
+}

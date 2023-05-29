@@ -1,6 +1,6 @@
 {
   "name": "@fast.me/vite-swc",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "repository": {
     "url": "https://github.com/fast-me/vite-swc"
   },
@@ -8,9 +8,14 @@
     "name": "Zaid Daghestani",
     "email": "zaid@fastapps.one"
   },
-  "main": "./dist/lib/index.js",
-  "module": "./dist/index.mjs",
-  "type": "commonjs",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lib/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
   "scripts": {
     "build": "yarn vite build",
     "test": "yarn vitest",

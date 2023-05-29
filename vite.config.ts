@@ -1,7 +1,6 @@
 /// <reference types="vitest" />
-import { UserConfigExport, defineConfig } from 'vite';
 import { resolve } from 'path';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { UserConfigExport, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { InlineConfig } from 'vitest';
 
@@ -23,28 +22,7 @@ const cfg: UserConfigExport = {
       tsConfigFilePath: __dirname + '/tsconfig.lib.json',
       skipDiagnostics: true,
     }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'README.md',
-          dest: '.',
-        },
-        {
-          src: 'package.json',
-          dest: '.',
-        },
-      ],
-    }),
   ],
-
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [
-  //    viteTsConfigPaths({
-  //      root: '../../',
-  //    }),
-  //  ],
-  // },
 
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
@@ -54,7 +32,7 @@ const cfg: UserConfigExport = {
 
       name: 'vite-swc',
       fileName: 'index',
-      formats: ['es', 'cjs'],
+      formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
       external: ['@swc/core'],
